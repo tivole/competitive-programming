@@ -1,3 +1,7 @@
+// (c) Tivole
+
+// 1
+
 #include <stdio.h>
 int main(void){
 	int var;
