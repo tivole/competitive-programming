@@ -9,15 +9,15 @@ using namespace std;
 
 #define MAX 100
 
-int array[100][100], len[100], f, n;
+char array[100][100], len[100], f, n;
 
 
 
-int rec(int k, int deep, bool visited[]) {
+char rec(char k, char deep, bool visited[]) {
     visited[k] = true;
     if (deep == n) { return MAX; }
-    int i, minimum = MAX, j, temp;
-    bool visited_new[100];
+    char i, minimum = MAX, j, temp;
+    bool visited_new[n];
 
     for (i = 0; i < len[k]; i++) {
         if (array[k][i] == f) {
@@ -25,7 +25,7 @@ int rec(int k, int deep, bool visited[]) {
         }
     }
 
-    for (j = 0; j < 100; j++) visited_new[j] = visited[j];
+    for (j = 0; j < n; j++) visited_new[j] = visited[j];
 
     for (i = 0; i < len[k]; i++) {
         if (visited[array[k][i]] == false) {
@@ -38,7 +38,7 @@ int rec(int k, int deep, bool visited[]) {
 
 int main() {
 
-    int s, a, i, j, ans;
+    char s, a, i, j, ans;
 
     scanf("%d%d%d", &n, &s, &f);
 
@@ -63,8 +63,8 @@ int main() {
         return 0;
     }
 
-    bool visited[100];
-    for(int i=0; i<100; i++) visited[i] = false;
+    bool visited[n];
+    for(i=0; i<n; i++) visited[i] = false;
 
     ans = rec(s, 1, visited);
 
