@@ -2,4 +2,9 @@
 
 # 8876
 
-i = input()
+i = float(input())
+
+if float(int(i)) == i:
+    print('Ok')
+else:
+    print('No')
